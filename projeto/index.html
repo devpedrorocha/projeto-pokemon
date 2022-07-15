@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1</title>
+    <link rel="stylesheet" type="text/css" href="./assets/style.css" />
+</head>
+
+<body>
+
+    <main class="wrapper">
+        <section>
+            <h1 id="nome">Lapras</h1>
+
+            <button id="ver" onclick="goToBulbapedia()">Ver mais</button>
+
+
+            <div id="pokemon_image"></div>
+            <span id='description'>A Pokémon that has been overhunted almost to extinction. It can ferry
+                people across the water.</span>
+
+            <div class="movesetdiv">
+
+                <h2>Moveset</h2>
+                <ul class="linhas">
+
+                    <li><img class="pokebola" src="assets/img/pokeball.png" alt="">Water Pulse <button class="delete"
+                            onclick="deletar(this)">Deletar</button>
+                    </li>
+                    <li><img class="pokebola" src="assets/img/pokeball.png" alt="">Avalanche <button class="delete"
+                            onclick="deletar(this)">Deletar</button></li>
+                    <li><img class="pokebola" src="assets/img/pokeball.png" alt="">Dragon Pulse <button class="delete"
+                            onclick="deletar(this)">Deletar</button></li>
+                    <li><img class="pokebola" src="assets/img/pokeball.png" alt="">Ice Beam <button class="delete"
+                            onclick="deletar(this)">Deletar</button></li>
+                </ul>
+
+            </div>
+
+            <div class="golpe">
+                <select name="seletor" id="seletor">
+
+                </select>
+                <button class="add">Adicionar</button>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="./assets/script.js"></script>
+</body>
+
+</html>
