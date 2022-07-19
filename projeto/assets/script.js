@@ -5,50 +5,55 @@ console.log('Carrega o javascript aqui');
 let moveSelecionado = '';
 let moveset = [];
 const movesDisponiveis = ['Water Pulse', 'Avalanche', 'Dragon Pulse', 'Ice Beam'];
-const linhas = document.querySelectorAll('li');
-let select = document.querySelector("select")
-let option = document.querySelectorAll('option')
-console.log(select.value)
-
-/* option.forEach(function (elemento){
-    movesDisponiveis.push(elemento.value) 
-})
-console.log(movesDisponiveis) */
-
-function carregarGolpes() {
-    movesDisponiveis.forEach(function (elemento) {
-        let select = document.querySelector('select')
-        let option = document.createElement('option')
-        option.textContent = elemento
-        option.id = elemento
-        select.innerHTML = `${option}`
-
-    })
-}
-
-console.log(select)
-carregarGolpes()
+const li = document.createElement("li")
 
 // componentes
+const btnAdd = document.querySelector('.add')
+const select = document.querySelector("#seletor")
+
 
 // add eventos
+btnAdd.addEventListener("click", adicionaGolpe)
+
 
 // métodosz
-
 function goToBulbapedia() {
     open("https://bulbapedia.bulbagarden.net/wiki/Lapras_(Pok%C3%A9mon)")
 }
 
-
-function deletar(elemento) {
-    elemento.parentNode.remove()
+function carregaGolpes() {
+    let html = ""
+    movesDisponiveis.forEach((move) => {
+        html += `<option value='${move}'>${move}</option>`
+    })
+    select.innerHTML = html
 }
 
-/* 
-linhas.forEach(function (elemento) {
-    let botao = elemento.querySelector('.delete')
-    botao.addEventListener('click', function (evento) {
-        evento.target.parentNode.remove()
-    })
-}) */
+carregaGolpes()
+
+
+function adicionaGolpe() {
+    //Utilizar includes e Arrays
+    moveSelecionado = select.value
+    let li = document.createElement('li')
+    li.id = moveSelecionado
+    li.innerHTML = `${moveSelecionado} <button id = "delete${moveSelecionado}">Deletar</button>`
+
+    document.getElementById("listMoves").appendChild(li)
+
+    document.getElementById(`delete${moveSelecionado}`).addEventListener("click", deletar(li))
+
+
+    li.forEach(function (elemento) {
+        let botao = elemento.querySelector(`button`)
+        botao.addEventListener('click', function (evento) {
+            evento.target.parentNode.remove()
+            })
+        })
+
+}
+ //Dando Erro
+
+
+
 

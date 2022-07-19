@@ -87,28 +87,28 @@ li {
     padding-bottom: 15px;
 }
 
-.delete {
-    margin-right: 25px;
+li::before{
+    content: '';
+
+    width: 20px;
+    height: 20px;
+
+    background-image: url(img/pokeball.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+    margin-left: 40px;
+    
+}
+
+
+button{
     border-radius: 10px;
-    font-size: 1rem;
-    border: solid 1px aqua;
-    background-color: aqua;
+    border: 1px solid white;
     cursor: pointer;
-    transition: border 0.3s;
-
-
 }
 
-.delete:hover {
-    border: 1px solid black;
-}
 
-.pokebola {
-    width: 15px;
-    height: 15px;
-    margin-left: 25px;
-    margin-right: 45px
-}
 
 #ver {
     align-self: flex-end;
